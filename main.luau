@@ -6,7 +6,7 @@
 
 ]]
 
-local module = {functions = {}, all = false, box = false, tracer = false, text = false, team = false, colors = {box = Color3.fromRGB(255,0,0), text = Color3.fromRGB(255,0,0), tracer = Color3.fromRGB(255,0,0)}}
+local module = {all = false, box = false, tracer = false, text = false, team = false, colors = {box = Color3.fromRGB(255,0,0), text = Color3.fromRGB(255,0,0), tracer = Color3.fromRGB(255,0,0)}}
 
 local players = game:GetService("Players")
 
@@ -118,7 +118,7 @@ local function VisualizePlayer(player)
                 if tracer_visible then
                     tracer_outline.From = Vector2.new(screen_mid_x, screen_bottom_y)
                     tracer_outline.To = Vector2.new(tracer_position.X, tracer_position.Y)
-                    tracer_outline.Visible = module.colors.tracer
+                    
 
                     tracer.From = Vector2.new(screen_mid_x, screen_bottom_y)
                     tracer.To = Vector2.new(tracer_position.X, tracer_position.Y)
@@ -128,7 +128,8 @@ local function VisualizePlayer(player)
                     else
                         tracer.Color = module.colors.tracer
                     end
-
+                    
+                    tracer_outline.Visible = module.tracer
                     tracer.Visible = module.tracer
                 else
                     tracer.Visible = false
@@ -170,7 +171,7 @@ local function VisualizePlayer(player)
                 end
 
                 name_outline.Visible = module.text
-                name.Visible = module.all
+                name.Visible = module.text
             else
                 box.Visible = false
                 box_outline.Visible = false
