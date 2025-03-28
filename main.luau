@@ -188,15 +188,13 @@ local function VisualizePlayer(player)
     player.CharacterAdded:Connect(OnRender)
 end
 
-function module:Init()
-    for _, player in pairs(players:GetPlayers()) do
-        if player  == lp then continue end
-        VisualizePlayer(player)
-    end
-    
-    players.PlayerAdded:Connect(function(player)
-        VisualizePlayer(player)
-    end)
+for _, player in pairs(players:GetPlayers()) do
+    if player  == lp then continue end
+    VisualizePlayer(player)
 end
+    
+players.PlayerAdded:Connect(function(player)
+    VisualizePlayer(player)
+end)
 
 return module
