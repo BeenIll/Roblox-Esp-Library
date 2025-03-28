@@ -6,7 +6,7 @@
 
 ]]
 
-local module = {functions = {}, all = true, box = true, tracer = true, text = true, team = true, colors = {box = Color3.fromRGB(255,0,0), text = Color3.fromRGB(255,0,0), tracer = Color3.fromRGB(255,0,0)}}
+local module = {functions = {}, all = false, box = false, tracer = false, text = false, team = false, colors = {box = Color3.fromRGB(255,0,0), text = Color3.fromRGB(255,0,0), tracer = Color3.fromRGB(255,0,0)}}
 
 local players = game:GetService("Players")
 
